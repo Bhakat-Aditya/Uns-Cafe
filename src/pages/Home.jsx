@@ -201,7 +201,7 @@ const Home = () => {
           <div className="hero-img-container relative flex justify-center">
             <div className="absolute inset-0 bg-orange-500/20 blur-[120px] rounded-full"></div>
             <img
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f27?q=80&w=1000"
+              src="https://images.pexels.com/photos/958547/pexels-photo-958547.jpeg"
               alt="Cafe Atmosphere"
               className="hero-img relative z-10 w-[90%] rounded-[4rem] shadow-2xl border border-white/10 object-cover"
             />
@@ -258,7 +258,7 @@ const Home = () => {
             <div className="fav-item relative group w-full">
               <div className="overflow-hidden rounded-[3rem] border border-white/10 h-[600px] w-full relative">
                 <img
-                  src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1000"
+                  src="https://img.clevup.in/272541/SKU-1373_0-1771486227759.png?width=600&format=webp"
                   className="fav-img absolute -top-[10%] left-0 w-full h-[120%] object-cover"
                   alt="Tacos"
                 />
@@ -266,10 +266,10 @@ const Home = () => {
               </div>
               <div className="fav-content absolute -bottom-10 md:-left-10 left-5 bg-orange-500 text-black p-8 rounded-3xl max-w-[300px] shadow-2xl">
                 <h3 className="text-3xl font-black uppercase leading-none mb-2">
-                  Mutton Kosha Tacos
+                  Chicken Kosha
                 </h3>
                 <p className="font-semibold opacity-80 text-sm uppercase tracking-wider">
-                  Our signature fusion hit.
+                  Kolkata's fiery love affair on a plate.
                 </p>
               </div>
             </div>
@@ -277,7 +277,7 @@ const Home = () => {
             <div className="fav-item relative group w-full md:mt-40 mt-10">
               <div className="overflow-hidden rounded-[3rem] border border-white/10 h-[600px] w-full relative">
                 <img
-                  src="https://images.unsplash.com/photo-1599487488170-d17160676531?q=80&w=1000"
+                  src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Basanti_Pulao.webp"
                   className="fav-img absolute -top-[10%] left-0 w-full h-[120%] object-cover"
                   alt="Prawns"
                 />
@@ -285,10 +285,10 @@ const Home = () => {
               </div>
               <div className="fav-content absolute -bottom-10 md:-right-10 right-5 bg-white text-black p-8 rounded-3xl max-w-[300px] shadow-2xl text-right">
                 <h3 className="text-3xl font-black uppercase leading-none mb-2">
-                  Beer-Battered Prawns
+                  Basanti Pulao
                 </h3>
                 <p className="font-semibold opacity-80 text-sm uppercase tracking-wider">
-                  Crispy, golden, and bold.
+                  A golden twist on a Bengali classic.
                 </p>
               </div>
             </div>
@@ -353,18 +353,18 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Dahi Kebabs",
-                img: "https://images.unsplash.com/photo-1599487488170-d17160676531?q=80&w=800",
+                title: "Mushroom Masala",
+                img: "https://www.cookwithkushi.com/wp-content/uploads/2020/03/IMG_3557_11-1024x650-1.jpg",
                 price: "₹280",
               },
               {
-                title: "Irish Coffee",
-                img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800",
+                title: "Fish Tikka Masala",
+                img: "https://foodiesterminal.com/wp-content/uploads/2019/03/Fish-tikka-masala-recipe-1-1.jpg",
                 price: "₹210",
               },
               {
-                title: "Cheese Garlic Bread",
-                img: "https://images.unsplash.com/photo-1573140247632-f8f9fada7c7c?q=80&w=800",
+                title: "Navratan Korma",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaWE4KCxxo_0dsTgy7G4Aurit0Lmom0E8SA&s",
                 price: "₹180",
               },
             ].map((item, i) => (
