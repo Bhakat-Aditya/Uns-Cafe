@@ -1,0 +1,69 @@
+{
+  "categories": ["All", "Tacos", "Kebabs", "Sides", "Beverages"],
+  "items": [
+    {
+      "id": 1,
+      "name": "Mutton Kosha Tacos",
+      "desc": "Slow-cooked mutton with a Mexican twist",
+      "price": 349,
+      "category": "Tacos",
+      "tag": "Best Seller"
+    },
+    {
+      "id": 2,
+      "name": "Beer-Battered Prawns",
+      "desc": "Crispy prawns with spicy dip",
+      "price": 420,
+      "category": "Sides",
+      "tag": "Must Try"
+    },
+    {
+      "id": 3,
+      "name": "Dahi Kebabs",
+      "desc": "Creamy, melt-in-mouth veg kebabs",
+      "price": 280,
+      "category": "Kebabs",
+      "tag": "Chef's Special"
+    },
+    {
+      "id": 4,
+      "name": "Irish Coffee",
+      "desc": "Strong brew with a splash of Irish cream",
+      "price": 210,
+      "category": "Beverages",
+      "tag": "Trending"
+    },
+    {
+      "id": 5,
+      "name": "Cheese Garlic Bread",
+      "desc": "Oozing mozzarella and burnt garlic",
+      "price": 180,
+      "category": "Sides",
+      "tag": ""
+    },
+    {
+      "id": 6,
+      "name": "Chicken Tikka Wrap",
+      "desc": "Spicy tikka wrapped in a soft tortilla",
+      "price": 260,
+      "category": "Tacos",
+      "tag": ""
+    },
+    {
+      "id": 7,
+      "name": "Iced Americano",
+      "desc": "Cold brew for the hustlers",
+      "price": 160,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 8,
+      "name": "Paneer Tikka",
+      "desc": "Char-grilled cottage cheese",
+      "price": 240,
+      "category": "Kebabs",
+      "tag": ""
+    }
+  ]
+}
