@@ -25,7 +25,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
           
           {/* 404 Redirect - Optional: Sends user back home if link is broken */}
           <Route path="*" element={<Home />} />

@@ -1,68 +1,676 @@
 {
-  "categories": ["All", "Tacos", "Kebabs", "Sides", "Beverages"],
+  "categories": [
+    "Breakfast",
+    "Breads",
+    "Mains",
+    "Kebabs",
+    "Rice",
+    "Desserts",
+    "Beverages",
+    "Snacks",
+    "Wraps"
+  ],
   "items": [
     {
       "id": 1,
-      "name": "Mutton Kosha Tacos",
-      "desc": "Slow-cooked mutton with a Mexican twist",
-      "price": 349,
-      "category": "Tacos",
-      "tag": "Best Seller"
+      "name": "Paneer Zest Green Salad",
+      "desc": "",
+      "price": 269,
+      "category": "Breakfast",
+      "tag": ""
     },
     {
       "id": 2,
-      "name": "Beer-Battered Prawns",
-      "desc": "Crispy prawns with spicy dip",
-      "price": 420,
-      "category": "Sides",
-      "tag": "Must Try"
+      "name": "Potato & Egg Salad",
+      "desc": "",
+      "price": 219,
+      "category": "Breakfast",
+      "tag": ""
     },
     {
       "id": 3,
-      "name": "Dahi Kebabs",
-      "desc": "Creamy, melt-in-mouth veg kebabs",
-      "price": 280,
-      "category": "Kebabs",
-      "tag": "Chef's Special"
+      "name": "Grilled Chicken Salad",
+      "desc": "",
+      "price": 299,
+      "category": "Breakfast",
+      "tag": ""
     },
     {
       "id": 4,
-      "name": "Irish Coffee",
-      "desc": "Strong brew with a splash of Irish cream",
-      "price": 210,
-      "category": "Beverages",
-      "tag": "Trending"
+      "name": "Corn & Mayo Sandwich",
+      "desc": "",
+      "price": 229,
+      "category": "Breakfast",
+      "tag": ""
     },
     {
       "id": 5,
-      "name": "Cheese Garlic Bread",
-      "desc": "Oozing mozzarella and burnt garlic",
-      "price": 180,
-      "category": "Sides",
+      "name": "Paneer Tikka Sandwich",
+      "desc": "",
+      "price": 279,
+      "category": "Breakfast",
       "tag": ""
     },
     {
       "id": 6,
-      "name": "Chicken Tikka Wrap",
-      "desc": "Spicy tikka wrapped in a soft tortilla",
-      "price": 260,
-      "category": "Tacos",
+      "name": "Egg Mustard Sandwich",
+      "desc": "",
+      "price": 299,
+      "category": "Breakfast",
       "tag": ""
     },
     {
       "id": 7,
-      "name": "Iced Americano",
-      "desc": "Cold brew for the hustlers",
-      "price": 160,
-      "category": "Beverages",
+      "name": "Fish Tikka Sandwich",
+      "desc": "",
+      "price": 349,
+      "category": "Breakfast",
       "tag": ""
     },
     {
       "id": 8,
-      "name": "Paneer Tikka",
-      "desc": "Char-grilled cottage cheese",
-      "price": 240,
+      "name": "Grilled Chicken Sandwich",
+      "desc": "",
+      "price": 329,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 9,
+      "name": "Butter Garlic Bread",
+      "desc": "",
+      "price": 189,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 10,
+      "name": "Masala Cheese Omelette",
+      "desc": "",
+      "price": 199,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 11,
+      "name": "Mushroom & Cheese Omelette",
+      "desc": "",
+      "price": 219,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 12,
+      "name": "Cheesy Sausage Omelette",
+      "desc": "",
+      "price": 249,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 13,
+      "name": "Veggie Protein Power Stew",
+      "desc": "",
+      "price": 199,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 14,
+      "name": "Papaya Pepper Chicken Stew",
+      "desc": "",
+      "price": 229,
+      "category": "Breakfast",
+      "tag": ""
+    },
+    {
+      "id": 15,
+      "name": "Garden Pepper Mutton Stew",
+      "desc": "",
+      "price": 279,
+      "category": "Breakfast",
+      "tag": ""
+    },
+
+    {
+      "id": 16,
+      "name": "Rumali Roti",
+      "desc": "",
+      "price": 39,
+      "category": "Breads",
+      "tag": ""
+    },
+    {
+      "id": 17,
+      "name": "Tandoori Roti",
+      "desc": "",
+      "price": 39,
+      "category": "Breads",
+      "tag": ""
+    },
+    {
+      "id": 18,
+      "name": "Naan",
+      "desc": "",
+      "price": 39,
+      "category": "Breads",
+      "tag": ""
+    },
+    {
+      "id": 19,
+      "name": "Butter Naan",
+      "desc": "",
+      "price": 49,
+      "category": "Breads",
+      "tag": ""
+    },
+    {
+      "id": 20,
+      "name": "Butter Garlic Naan",
+      "desc": "",
+      "price": 69,
+      "category": "Breads",
+      "tag": ""
+    },
+    {
+      "id": 21,
+      "name": "Luchi",
+      "desc": "",
+      "price": 39,
+      "category": "Breads",
+      "tag": ""
+    },
+
+    {
+      "id": 22,
+      "name": "Daal Makhani",
+      "desc": "",
+      "price": 279,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 23,
+      "name": "Navratan Korma",
+      "desc": "",
+      "price": 329,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 24,
+      "name": "Mushroom Masala",
+      "desc": "",
+      "price": 329,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 25,
+      "name": "Palak Paneer",
+      "desc": "",
+      "price": 329,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 26,
+      "name": "Paneer Tikka Masala",
+      "desc": "",
+      "price": 329,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 27,
+      "name": "Paneer Reshmi Masala",
+      "desc": "",
+      "price": 329,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 28,
+      "name": "Fish Tikka Masala",
+      "desc": "",
+      "price": 499,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 29,
+      "name": "Fish Reshmi Masala",
+      "desc": "",
+      "price": 499,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 30,
+      "name": "Pomfret Masala",
+      "desc": "",
+      "price": 499,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 31,
+      "name": "Chingri Malaikari",
+      "desc": "",
+      "price": 499,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 32,
+      "name": "Chicken Kosha",
+      "desc": "",
+      "price": 449,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 33,
+      "name": "Lebhu Lonka Murgi",
+      "desc": "",
+      "price": 449,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 34,
+      "name": "Dhania Chicken",
+      "desc": "",
+      "price": 449,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 35,
+      "name": "Shahi Chicken",
+      "desc": "",
+      "price": 449,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 36,
+      "name": "Chicken Tikka Masala",
+      "desc": "",
+      "price": 529,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 37,
+      "name": "Mutton Kosha",
+      "desc": "",
+      "price": 549,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 38,
+      "name": "Saag Mutton",
+      "desc": "",
+      "price": 549,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 39,
+      "name": "Awadhi Mutton",
+      "desc": "",
+      "price": 599,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 40,
+      "name": "Dhania Ghost",
+      "desc": "",
+      "price": 549,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 41,
+      "name": "Rajasthani Laal Maas",
+      "desc": "",
+      "price": 549,
+      "category": "Mains",
+      "tag": ""
+    },
+    {
+      "id": 42,
+      "name": "Mutton Kala Bhuna",
+      "desc": "",
+      "price": 549,
+      "category": "Mains",
+      "tag": ""
+    },
+
+    {
+      "id": 43,
+      "name": "Dahi Kebab with Aloo Paratha",
+      "desc": "",
+      "price": 349,
       "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 44,
+      "name": "Shahi Paneer Tikka Kebab",
+      "desc": "",
+      "price": 349,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 45,
+      "name": "Paneer Reshmi Kebab",
+      "desc": "",
+      "price": 349,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 46,
+      "name": "Soya Tikka Kebab",
+      "desc": "",
+      "price": 349,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 47,
+      "name": "Veg Galouti Kebab",
+      "desc": "",
+      "price": 349,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 48,
+      "name": "Fish Tikka Kebab",
+      "desc": "",
+      "price": 449,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 49,
+      "name": "Fish Reshmi Kebab",
+      "desc": "",
+      "price": 449,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 50,
+      "name": "Mahi Kasundi Kebab",
+      "desc": "",
+      "price": 449,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 51,
+      "name": "Royal Gondhoraj Fish Tikka",
+      "desc": "",
+      "price": 469,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 52,
+      "name": "Tandoori Pomfret",
+      "desc": "",
+      "price": 449,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 53,
+      "name": "Chicken Tikka Kebab",
+      "desc": "",
+      "price": 399,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 54,
+      "name": "Murgh Pahadi Tikka",
+      "desc": "",
+      "price": 429,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 55,
+      "name": "Chicken Reshmi Kebab",
+      "desc": "",
+      "price": 399,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 56,
+      "name": "Murgh Lehsuni Kebab",
+      "desc": "",
+      "price": 429,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 57,
+      "name": "Tandoori Chicken",
+      "desc": "",
+      "price": "349/649",
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 58,
+      "name": "Afghani Tandoori Chicken",
+      "desc": "",
+      "price": "349/649",
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 59,
+      "name": "Lucknowi Galouti Kebab",
+      "desc": "",
+      "price": 569,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 60,
+      "name": "Mutton Burra Kebab",
+      "desc": "",
+      "price": 569,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 61,
+      "name": "Mutton Banjseekh Kebab",
+      "desc": "",
+      "price": 569,
+      "category": "Kebabs",
+      "tag": ""
+    },
+    {
+      "id": 62,
+      "name": "Mutton Kacchi Kebab",
+      "desc": "",
+      "price": 569,
+      "category": "Kebabs",
+      "tag": ""
+    },
+
+    {
+      "id": 63,
+      "name": "Steamed Rice",
+      "desc": "",
+      "price": 199,
+      "category": "Rice",
+      "tag": ""
+    },
+    {
+      "id": 64,
+      "name": "Peas Pulao",
+      "desc": "",
+      "price": 299,
+      "category": "Rice",
+      "tag": ""
+    },
+    {
+      "id": 65,
+      "name": "Basanti Pulao",
+      "desc": "",
+      "price": 299,
+      "category": "Rice",
+      "tag": ""
+    },
+    {
+      "id": 66,
+      "name": "Keema Boondi Pulao",
+      "desc": "",
+      "price": 369,
+      "category": "Rice",
+      "tag": ""
+    },
+    {
+      "id": 67,
+      "name": "Jeera Rice",
+      "desc": "",
+      "price": 239,
+      "category": "Rice",
+      "tag": ""
+    },
+    {
+      "id": 68,
+      "name": "Dhakai Morog Pulao",
+      "desc": "",
+      "price": 399,
+      "category": "Rice",
+      "tag": ""
+    },
+
+    {
+      "id": 69,
+      "name": "Sandesh Cheesecake",
+      "desc": "",
+      "price": 199,
+      "category": "Desserts",
+      "tag": ""
+    },
+    {
+      "id": 70,
+      "name": "Gulabjamun Cheesecake",
+      "desc": "",
+      "price": 199,
+      "category": "Desserts",
+      "tag": ""
+    },
+    {
+      "id": 71,
+      "name": "Baileys Coffee Orange Mousse",
+      "desc": "",
+      "price": 229,
+      "category": "Desserts",
+      "tag": ""
+    },
+    {
+      "id": 72,
+      "name": "Irish Rasmalai Trifle",
+      "desc": "",
+      "price": 229,
+      "category": "Desserts",
+      "tag": ""
+    },
+
+    {
+      "id": 73,
+      "name": "Espresso",
+      "desc": "",
+      "price": "149/199",
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 74,
+      "name": "Ristretto",
+      "desc": "",
+      "price": 149,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 75,
+      "name": "Lungo",
+      "desc": "",
+      "price": 179,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 76,
+      "name": "Americano",
+      "desc": "",
+      "price": "149/199",
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 77,
+      "name": "Macchiato",
+      "desc": "",
+      "price": 179,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 78,
+      "name": "Vienna Coffee",
+      "desc": "",
+      "price": 199,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 79,
+      "name": "Irish Cream Coffee",
+      "desc": "",
+      "price": 199,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 80,
+      "name": "Cappuccino",
+      "desc": "",
+      "price": 179,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 81,
+      "name": "Tiramisu Cappuccino",
+      "desc": "",
+      "price": 199,
+      "category": "Beverages",
+      "tag": ""
+    },
+    {
+      "id": 82,
+      "name": "Popcorn Cappuccino",
+      "desc": "",
+      "price": 209,
+      "category": "Beverages",
       "tag": ""
     }
   ]

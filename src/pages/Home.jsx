@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, MapPin, Clock, Coffee } from "lucide-react";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,10 +11,8 @@ const Home = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Hero Animation: Entrance & Continuous Float
+      // --- 1. HERO ANIMATION ---
       const heroTl = gsap.timeline();
-
-      // Text reveal with clip-path like effect
       heroTl
         .from(".hero-text-line", {
           y: 130,
@@ -25,12 +23,7 @@ const Home = () => {
         })
         .from(
           ".hero-btn",
-          {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-          },
+          { y: 50, opacity: 0, duration: 1, ease: "power3.out" },
           "-=0.8",
         )
         .from(
@@ -45,7 +38,6 @@ const Home = () => {
           "-=1",
         );
 
-      // Continuous subtle floating effect for the hero image
       gsap.to(".hero-img", {
         y: -20,
         x: 10,
@@ -56,12 +48,26 @@ const Home = () => {
         ease: "sine.inOut",
       });
 
-      // 2. Customer Favorites: Parallax Images & Staggered Text
+      // --- 2. PHILOSOPHY TEXT SCRUB ---
+      // Text characters/words light up as you scroll down
+      gsap.to(".philosophy-word", {
+        scrollTrigger: {
+          trigger: ".philosophy-section",
+          start: "top 70%",
+          end: "bottom 80%",
+          scrub: 1,
+        },
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        ease: "power1.out",
+      });
+
+      // --- 3. CUSTOMER FAVORITES PARALLAX ---
       gsap.utils.toArray(".fav-item").forEach((item) => {
         const img = item.querySelector(".fav-img");
         const content = item.querySelector(".fav-content");
 
-        // Image Parallax Effect
         gsap.to(img, {
           yPercent: 20,
           ease: "none",
@@ -73,7 +79,6 @@ const Home = () => {
           },
         });
 
-        // Content fly-in
         gsap.from(content, {
           scrollTrigger: {
             trigger: item,
@@ -87,7 +92,26 @@ const Home = () => {
         });
       });
 
-      // 3. Must Try: Layered Slide & Scale Reveal
+      // --- 4. THE EXPERIENCE (HORIZONTAL SCROLL) ---
+      // Using matchMedia so it only pins on desktop. On mobile, it scrolls normally.
+      let mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const horizontalWrapper = document.querySelector(".horizontal-wrapper");
+
+        gsap.to(horizontalWrapper, {
+          x: () => -(horizontalWrapper.scrollWidth - window.innerWidth),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".horizontal-container",
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            end: () => "+=" + horizontalWrapper.scrollWidth,
+          },
+        });
+      });
+
+      // --- 5. MUST TRY LAYERED REVEAL ---
       gsap.from(".must-try-card", {
         scrollTrigger: {
           trigger: ".must-try-section",
@@ -101,18 +125,30 @@ const Home = () => {
         ease: "back.out(1.2)",
       });
 
-      // 4. Infinite Marquee (Pure GSAP)
+      // --- 6. INFINITE MARQUEE ---
       const marqueeWidth = document.querySelector(
         ".release-text-track",
       ).offsetWidth;
       gsap.to(".release-text-track", {
-        x: -marqueeWidth / 2, // Move half the track (since it's duplicated)
+        x: -marqueeWidth / 2,
         duration: 15,
         ease: "none",
         repeat: -1,
       });
 
-      // 5. Final CTA Scale-up
+      // --- 7. LOCATION SECTION ENTRANCE ---
+      gsap.from(".location-box", {
+        scrollTrigger: {
+          trigger: ".location-section",
+          start: "top 80%",
+        },
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+      });
+
+      // --- 8. FINAL CTA ---
       gsap.from(".final-cta", {
         scrollTrigger: {
           trigger: ".final-section",
@@ -133,7 +169,7 @@ const Home = () => {
       ref={mainContainer}
       className="bg-[#0a0a0a] text-white selection:bg-orange-500 selection:text-black overflow-x-hidden font-sans"
     >
-      {/* --- SCENE 1: HERO --- */}
+      {/* SCENE 1: HERO */}
       <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="z-10 relative">
@@ -173,20 +209,52 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SCENE 2: CUSTOMER FAVORITES (Parallax Reveal) --- */}
-      <section className="py-32 px-6 bg-gradient-to-b from-[#0a0a0a] to-[#111]">
+      {/* SCENE 1.5: PHILOSOPHY (TEXT REVEAL) */}
+      <section className="philosophy-section py-40 px-6 bg-orange-500 text-black flex items-center justify-center rounded-[3rem] mx-4 md:mx-10 my-20">
+        <div className="container mx-auto text-center">
+          <p className="text-4xl md:text-7xl font-black uppercase leading-tight tracking-tighter max-w-5xl mx-auto flex flex-wrap justify-center gap-x-4 gap-y-2">
+            {[
+              "We",
+              "don't",
+              "just",
+              "brew",
+              "coffee.",
+              "We",
+              "craft",
+              "experiences.",
+              "Every",
+              "cup",
+              "is",
+              "a",
+              "story",
+              "of",
+              "bold",
+              "flavors",
+              "and",
+              "uncompromising",
+              "quality.",
+            ].map((word, i) => (
+              <span
+                key={i}
+                className="philosophy-word opacity-20 translate-y-10 inline-block"
+              >
+                {word}
+              </span>
+            ))}
+          </p>
+        </div>
+      </section>
+
+      {/* SCENE 2: CUSTOMER FAVORITES */}
+      <section className="py-32 px-6">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6">
             <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter">
               Crowd <br /> <span className="text-orange-500">Favorites.</span>
             </h2>
-            <p className="text-gray-500 max-w-xs md:text-right uppercase font-bold tracking-widest text-sm">
-              The dishes that keep our regulars coming back every single day.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-12">
-            {/* Item 1 */}
             <div className="fav-item relative group w-full">
               <div className="overflow-hidden rounded-[3rem] border border-white/10 h-[600px] w-full relative">
                 <img
@@ -206,7 +274,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Item 2 */}
             <div className="fav-item relative group w-full md:mt-40 mt-10">
               <div className="overflow-hidden rounded-[3rem] border border-white/10 h-[600px] w-full relative">
                 <img
@@ -229,8 +296,51 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SCENE 3: MUST TRY (Layered Slide) --- */}
-      <section className="must-try-section py-32 bg-zinc-900/50 px-6 border-y border-white/5">
+      {/* SCENE 3: THE EXPERIENCE (HORIZONTAL SCROLL ON DESKTOP) */}
+      <section className="horizontal-container lg:h-screen w-full bg-[#050505] overflow-hidden flex items-center py-20 lg:py-0 border-y border-white/10">
+        {/* On mobile, it's just a flex-col. On desktop, flex-row that scrolls sideways */}
+        <div className="horizontal-wrapper flex flex-col lg:flex-row gap-10 lg:gap-20 px-6 lg:px-20 w-full lg:w-max items-center">
+          <div className="w-full lg:w-[40vw] flex-shrink-0">
+            <h2 className="text-6xl md:text-[8rem] font-black uppercase tracking-tighter leading-none mb-6">
+              The <br />
+              <span className="text-orange-500">Vibe.</span>
+            </h2>
+            <p className="text-xl text-gray-400 font-light max-w-md">
+              Step into a space designed for conversations, late-night coding
+              sessions, and unforgettable dates.
+            </p>
+          </div>
+
+          <div className="w-full lg:w-[60vw] h-[60vh] flex-shrink-0 overflow-hidden rounded-[3rem]">
+            <img
+              src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=1200"
+              className="w-full h-full object-cover"
+              alt="Interior"
+            />
+          </div>
+
+          <div className="w-full lg:w-[40vw] h-[60vh] flex-shrink-0 overflow-hidden rounded-[3rem]">
+            <img
+              src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1200"
+              className="w-full h-full object-cover"
+              alt="Pouring Coffee"
+            />
+          </div>
+
+          <div className="w-full lg:w-[30vw] flex-shrink-0 lg:pr-20">
+            <h3 className="text-5xl font-black uppercase tracking-tighter mb-6 text-white">
+              Master Roasters
+            </h3>
+            <p className="text-gray-400 font-light">
+              Every bean is sourced responsibly and roasted in-house to ensure
+              the perfect crema on your espresso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SCENE 4: MUST TRY */}
+      <section className="must-try-section py-32 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-24">
             <span className="text-orange-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">
@@ -240,7 +350,6 @@ const Home = () => {
               Must <span className="text-orange-500">Try.</span>
             </h2>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -269,7 +378,6 @@ const Home = () => {
                   alt={item.title}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-
                 <div className="absolute bottom-0 left-0 w-full p-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="text-4xl font-black uppercase leading-none mb-4">
                     {item.title}
@@ -278,12 +386,6 @@ const Home = () => {
                     <span className="text-orange-500 font-black text-3xl">
                       {item.price}
                     </span>
-                    <div className="p-4 bg-white/10 backdrop-blur-md text-white rounded-full group-hover:bg-orange-500 group-hover:text-black transition-all duration-300">
-                      <ArrowRight
-                        size={24}
-                        className="-rotate-45 group-hover:rotate-0 transition-transform duration-300"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -292,10 +394,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SCENE 4: NEW RELEASES (GSAP Infinite Marquee) --- */}
-      <section className="release-section py-24 overflow-hidden relative bg-orange-500 flex items-center">
+      {/* SCENE 5: INFINITE MARQUEE */}
+      <section className="release-section py-20 overflow-hidden relative bg-orange-500 flex items-center">
         <div className="w-full flex whitespace-nowrap overflow-hidden">
-          {/* We create a track that holds two identical sets of content to scroll infinitely */}
           <div className="release-text-track flex items-center text-black text-7xl md:text-9xl font-black uppercase tracking-tighter gap-10 w-max">
             {[...Array(6)].map((_, i) => (
               <React.Fragment key={i}>
@@ -314,9 +415,66 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SCENE 5: THE FINAL CTA --- */}
+      {/* SCENE 6: LOCATION & HOURS (NEW) */}
+      <section className="location-section py-32 px-6 bg-[#111]">
+        <div className="container mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-10">
+              Find <br />
+              <span className="text-orange-500">Us.</span>
+            </h2>
+            <p className="text-gray-400 text-xl font-light mb-12 max-w-md">
+              Drop by for your morning brew or an evening feast. We're ready for
+              you.
+            </p>
+
+            <div className="space-y-8">
+              <div className="location-box flex items-start gap-6 bg-black p-8 rounded-3xl border border-white/5 hover:border-orange-500/50 transition-colors">
+                <MapPin className="text-orange-500 flex-shrink-0" size={32} />
+                <div>
+                  <h4 className="text-2xl font-black uppercase mb-2">
+                    Location
+                  </h4>
+                  <p className="text-gray-400">
+                    37/1, Purna Das Rd, <br /> Kalighat, Kolkata - 700029
+                  </p>
+                </div>
+              </div>
+
+              <div className="location-box flex items-start gap-6 bg-black p-8 rounded-3xl border border-white/5 hover:border-orange-500/50 transition-colors">
+                <Clock className="text-orange-500 flex-shrink-0" size={32} />
+                <div>
+                  <h4 className="text-2xl font-black uppercase mb-2">Hours</h4>
+                  <p className="text-gray-400">
+                    Mon - Sun <br /> 11:00 AM – 11:30 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-[600px] rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+            {/* Using a placeholder map image */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.6407451806513!2d88.3588035!3d22.517658299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02776c7fd4ab2b%3A0xe4338d1189f1b221!2sUns%20Cafe!5e0!3m2!1sen!2sus!4v1776765888562!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{
+                border: 0,
+                borderRadius: "12px",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+              }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Uns Cafe Location"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* SCENE 7: FINAL CTA */}
       <section className="final-section py-48 px-6 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/20 blur-[150px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="final-cta relative z-10 flex flex-col items-center">
           <h2 className="text-7xl md:text-[10rem] font-black tracking-tighter uppercase leading-[0.8] mb-12">
             Ready to <br /> <span className="text-orange-500">Feast?</span>
@@ -338,8 +496,8 @@ const Home = () => {
       <footer className="py-12 border-t border-white/10 px-6 bg-[#050505]">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
-            <h3 className="text-4xl font-black uppercase tracking-tighter">
-              UNS CAFE.
+            <h3 className="text-4xl font-black uppercase tracking-tighter flex items-center gap-2 justify-center md:justify-start">
+              <Coffee className="text-orange-500" /> UNS CAFE.
             </h3>
             <p className="text-gray-500 mt-2 text-sm uppercase tracking-widest font-semibold">
               37/1, Purna Das Rd, Kolkata.
@@ -347,7 +505,7 @@ const Home = () => {
           </div>
 
           <div className="flex gap-8 uppercase text-sm font-black tracking-widest text-gray-400">
-            {["Menu", "Gallery", "Contact"].map((link) => (
+            {["Menu", "Gallery"].map((link) => (
               <Link
                 key={link}
                 to={`/${link.toLowerCase()}`}
@@ -358,7 +516,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="text-gray-600 text-xs font-bold uppercase tracking-widest">
+          <div className="text-gray-600 text-xs font-bold uppercase tracking-widest text-center md:text-right">
             © 2026 UNS CAFE. <br className="md:hidden" /> DESIGNED FOR THE BOLD.
           </div>
         </div>

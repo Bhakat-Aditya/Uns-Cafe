@@ -16,7 +16,6 @@ const Navbar = () => {
         <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
         <Link to="/menu" className="hover:text-orange-500 transition-colors">Menu</Link>
         <Link to="/gallery" className="hover:text-orange-500 transition-colors">Gallery</Link>
-        <Link to="/contact" className="hover:text-orange-500 transition-colors">Contact</Link>
       </div>
 
       <div className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
